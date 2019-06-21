@@ -4,7 +4,6 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
     @title = "The Great Book #{rand(1000)}"
-
   end
 
   
@@ -20,19 +19,16 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   
   test "should create product" do
-    assert_difference('Product.count') do
-      
-    post products_url, params: { 
-        product: { 
-          description: @product.description, 
-          image_url: @product.image_url, 
-          price: @product.price, 
-          title: @title,
-        }
-      }
-    
+    assert_difference('Product.count') do      
+      post products_url, params: { 
+          product: { 
+            description: @product.description, 
+            image_url: @product.image_url, 
+            price: @product.price, 
+            title: @title,
+          }
+        }    
     end
-
     assert_redirected_to product_url(Product.last)
   end
 
@@ -57,8 +53,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
           price: @product.price, 
           title: @title,
         }
-      }
-    
+      }    
     assert_redirected_to product_url(@product)
   end
 

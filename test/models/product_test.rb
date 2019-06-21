@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
+
   test "product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
@@ -24,7 +25,7 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal ["must be greater than or equal to 0.01"], 
       product.errors[:price]
 
-    product.price = 1
+    product.price = 0.01 #changed from book directions
     assert product.valid?
   end
 
@@ -71,5 +72,13 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal [I18n.translate('errors.messages.taken')],
                  product.errors[:title]
   end
+
+  #test "product title is at least ten characters" do
+  #  product.title.length = 10
+  #  assert product.valid?
+  #  assert_equal ["lenght must be or greater than 10"],
+  #  product.errors[:title]
+  #end
+
 
 end

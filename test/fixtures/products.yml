@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+#one and two changed fto product_one and product_two.
 one:
   title: MyString
   description: MyText
