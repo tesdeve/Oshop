@@ -5,34 +5,27 @@
 .products {
   margin: 0;
   padding: 0.5em;
-  a {
+  a{
     padding: 0.354em 0.5em;
     border-radius: 0.354em;
   }
-  table {
+  table{
     border-collapse: collapse;
   }
-  td {
+  td{
     padding: 0.5em;
-    margin: 0;
+    margin:0;
   }
-
-  tr.list_line_odd {
+  tr.list_line_odd{
     background-color: #effeef;
   }
-
-  td.image {
-    // Hide this on mobile devices
+  td.image{
+    //Hide this on mobile dervices
     display: none;
-
-    // Assume anything bigger than 30em
-    // is a non-mobile device and can 
-    // fit the image.
-    @media (min-width: 30em) {
-      display: block;
-      img {
-        height: 11.3em;
-      }
+    @media (min-width: 30em){
+      display:block;
+      img{ height:11.3em;
+        }
     }
   }
 
